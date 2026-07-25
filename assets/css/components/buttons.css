@@ -1,0 +1,44 @@
+.btn {
+    border-radius: var(--radius-lg);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-cg);
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 24px;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0;
+
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+        url("../../img/btn-bg.png") center/cover no-repeat,
+        #8DB3A3;
+    background-size: 230%;
+    background-position: 30% 32%;
+    background-blend-mode: soft-light;
+}
+
+.btn:hover {
+    background-color: var(--accent-500);
+    box-shadow: 0 0 4px 0 #67BD96;
+    opacity: 1;
+}
+
+.btn--booking {
+    font-size: 32px;
+}
+
+.btn--footer {
+    background-image: unset;
+    background-color: var(--green-5);
+    font-size: 28px;
+    padding: 2px 24px;
+}
+
+@media screen and (max-width: 785px) {
+    .btn {
+        font-size: 20px;
+    }
+}

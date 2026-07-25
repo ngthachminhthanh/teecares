@@ -1,0 +1,422 @@
+/* ==========================================================================
+   Layout Header Styles
+   ========================================================================== */
+
+.site-header {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.header {
+    padding: 9px 0;
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+}
+
+.header__logo {
+    flex-shrink: 0;
+    aspect-ratio: 79/70;
+    width: 79px;
+}
+
+.header__nav {
+    flex: 1;
+    display: flex;
+    margin-left: 27px;
+    transition: max-height .35s ease, opacity .35s ease, transform .35s ease, visibility .35s ease;
+}
+
+.header__menu {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.header__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.header__item--has-dropdown {
+    display: flex;
+    align-items: center;
+}
+
+.header__item.is-open .header__icon {
+    transform: rotate(180deg);
+}
+
+.header__item.is-open .header__submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    max-height: 220px;
+    padding: 28px;
+    pointer-events: auto;
+}
+
+.header__trigger {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.header__icon {
+    transition: transform .3s ease;
+}
+
+.header__submenu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: -28px;
+    width: 160px;
+    padding: 0 28px;
+    border-radius: 24px;
+    background: #FCF7EF;
+    box-shadow: 0px 14px 42px 0px #39403859;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    overflow: hidden;
+    max-height: 0;
+    pointer-events: none;
+    transition:
+        max-height .3s ease,
+        padding .3s ease,
+        opacity .25s ease,
+        transform .25s ease,
+        visibility .25s ease;
+    z-index: 100;
+}
+
+.header__submenu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.header__submenu-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    font-family: var(--font-cg);
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0;
+}
+
+.header__link {
+    text-decoration: none;
+    font-family: var(--font-cg);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: 0;
+    user-select: none;
+}
+
+.header__dropdown {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.header__actions {
+    flex-shrink: 0;
+}
+
+.header__toggle {
+    width: 32px;
+    height: 24px;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.header__toggle span {
+    width: 100%;
+    height: 2px;
+    background: var(--primary-600);
+
+    transition:
+        transform .3s ease,
+        opacity .3s ease,
+        background-color .3s ease;
+    transform-origin: center;
+}
+
+.header__toggle.is-open span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.header__toggle.is-open span:nth-child(2) {
+    opacity: 0;
+}
+
+.header__toggle.is-open span:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+.header__toggle span+span {
+    margin-top: 6px;
+}
+
+.header__cta {
+    margin-top: 24px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.header__row:hover {
+    opacity: 0.7;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+/* Tablet */
+
+@media screen and (min-width: 786px) and (max-width: 1439px) {
+    .header__container {
+        flex-direction: column;
+    }
+
+    .header__menu {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 40px;
+        max-width: calc(var(--container-max-width) + 40px * 2);
+    }
+
+    .header__container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .header__nav {
+        margin-left: unset;
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 24px 40px;
+        background: #fff;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        pointer-events: none;
+    }
+
+    .header__toggle {
+        display: flex;
+    }
+
+    .header__nav.is-open {
+        display: block;
+        max-height: 800px;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .header__menu {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .header__item {
+        width: 100%;
+        padding: 16px 0;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .header__item--has-dropdown {
+        display: block;
+    }
+
+    .header__submenu {
+        position: static;
+        width: 100%;
+        margin-top: 0;
+        padding: 0 0 0 16px;
+        opacity: 0;
+        visibility: hidden;
+        transform: none;
+        max-height: 0;
+        overflow: hidden;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .header__submenu-list {
+        width: fit-content;
+    }
+
+    .header__submenu-item {
+        width: fit-content;
+    }
+
+    .header__item.is-open .header__submenu {
+        margin-top: 12px;
+        opacity: 1;
+        visibility: visible;
+        max-height: 200px;
+        padding: 0 0 0 16px;
+    }
+
+    .header__actions {
+        display: none;
+    }
+
+    .header__cta {
+        display: flex;
+    }
+
+    .header__row {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+/* Mobile */
+
+@media screen and (max-width: 785px) {
+    .header__container {
+        flex-direction: column;
+    }
+
+    .header__menu {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .header__container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .header__nav {
+        margin-left: unset;
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 24px 20px;
+        background: #fff;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        pointer-events: none;
+    }
+
+    .header__toggle {
+        display: flex;
+    }
+
+    .header__nav.is-open {
+        display: block;
+        max-height: 800px;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .header__menu {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    .header__item {
+        width: 100%;
+        padding: 16px 0;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .header__item--has-dropdown {
+        display: block;
+    }
+
+    .header__submenu {
+        position: static;
+        width: 100%;
+        margin-top: 0;
+        padding: 0 0 0 16px;
+        opacity: 0;
+        visibility: hidden;
+        transform: none;
+        max-height: 0;
+        overflow: hidden;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .header__submenu-list {
+        width: fit-content;
+    }
+
+    .header__submenu-item {
+        width: fit-content;
+    }
+
+    .header__item.is-open .header__submenu {
+        margin-top: 12px;
+        opacity: 1;
+        visibility: visible;
+        max-height: 200px;
+        padding: 0 0 0 16px;
+    }
+
+    .header__actions {
+        display: none;
+    }
+
+    .header__cta {
+        display: flex;
+    }
+
+    .header__row {
+        display: flex;
+        justify-content: space-between;
+    }
+}
