@@ -10,20 +10,29 @@
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 0;
-
-    background:
-        linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
-        url("../../img/btn-bg.png") center/cover no-repeat,
-        #8DB3A3;
-    background-size: 230%;
-    background-position: 30% 32%;
-    background-blend-mode: soft-light;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
-    background-color: var(--accent-500);
     box-shadow: 0 0 4px 0 #67BD96;
     opacity: 1;
+}
+
+.btn-primary {
+    background:
+        url("../../img/btn-bg.png") center/cover no-repeat;
+}
+
+.btn-primary:hover {
+    background: url("../../img/btn-bg-hover.png") center/cover no-repeat;
+}
+
+.btn-secondary {
+    background: var(--green-5);
+}
+
+.btn-secondary:hover {
+    opacity: 0.8;
 }
 
 .btn--booking {
@@ -31,8 +40,6 @@
 }
 
 .btn--footer {
-    background-image: unset;
-    background-color: var(--green-5);
     font-size: 28px;
     padding: 2px 24px;
 }

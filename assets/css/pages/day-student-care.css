@@ -1,0 +1,155 @@
+
+
+.program {
+    position: relative;
+    width: 890px;
+    height: 610px;
+}
+
+/* ellipse */
+
+.program__ellipse {
+    position: absolute;
+    width: 520px;
+    height: 420px;
+    border: 1.5px solid #f39a3b;
+    border-radius: 50%;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+}
+
+/* card */
+
+.program__item {
+    position: absolute;
+    width: 228px;
+    height: 146px;
+    background: #fff;
+    border: 1.5px solid #f39a3b;
+    border-radius: 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Chinese */
+
+.program__cn {
+    font-size: 62px;
+    line-height: 1;
+    color: #ee8f2f;
+    margin-bottom: 18px;
+}
+
+/* English */
+
+.program__en {
+    font-size: 18px;
+    color: #ee8f2f;
+    line-height: 1.2;
+}
+
+/* Position */
+
+.program__item--top {
+    left: 50%;
+    top: 30px;
+    transform: translateX(-50%);
+}
+
+.program__item--left {
+    left: 32px;
+    top: 230px;
+}
+
+.program__item--right {
+    right: 32px;
+    top: 230px;
+}
+
+.program__item--bottom {
+    left: 50%;
+    bottom: 36px;
+    transform: translateX(-50%);
+}
+
+/* ===========================
+   Tablet
+=========================== */
+
+@media (max-width: 991px) {
+
+    .program {
+        width: 700px;
+        height: 760px;
+    }
+
+    .program__ellipse {
+        width: 470px;
+        height: 500px;
+    }
+
+    .program__item {
+        width: 190px;
+        height: 125px;
+    }
+
+    .program__cn {
+        font-size: 52px;
+    }
+
+    .program__en {
+        font-size: 16px;
+    }
+
+    .program__item--left {
+        left: 0;
+        top: 300px;
+    }
+
+    .program__item--right {
+        right: 0;
+        top: 300px;
+    }
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media (max-width: 767px) {
+
+    .program {
+        width: 100%;
+        max-width: 360px;
+        height: auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 26px;
+    }
+
+    .program__ellipse {
+        display: none;
+    }
+
+    .program__item {
+        position: static;
+        transform: none;
+        width: 100%;
+        max-width: 250px;
+        height: 130px;
+    }
+
+    .program__cn {
+        font-size: 56px;
+    }
+
+    .program__en {
+        font-size: 17px;
+    }
+}

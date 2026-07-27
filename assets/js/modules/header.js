@@ -1,4 +1,6 @@
 export default function initHeader() {
+    if (window.innerWidth <= 1024) return;
+    
     const dropdowns = document.querySelectorAll(".js-dropdown");
 
     dropdowns.forEach((dropdown) => {

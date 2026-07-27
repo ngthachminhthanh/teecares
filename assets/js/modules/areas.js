@@ -1,7 +1,7 @@
 export default function initAreas() {
-    new Swiper(".js-areas-swiper", {
+    new Swiper(".swiper", {
         slidesPerView: 5,
-        spaceBetween: 24,
+        spaceBetween: 28,
         loop: true,
 
         autoplay: {
