@@ -421,6 +421,8 @@
 
     .immersion__img {
         margin: 0 auto;
+        max-height: 594px;
+        max-width: unset;
     }
 
     .immersion__info {
