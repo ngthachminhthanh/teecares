@@ -4,10 +4,10 @@
 
 :root {
    /* Font Families */
-   --font-cg: 'Cormorant Garamond', Georgia, Cambria, 'Times New Roman', Times, serif;
-   --font-dms: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-   --font-msz: 'Ma Shan Zheng', cursive, sans-serif;
-   --font-mont: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+   --font-cg: 'Cormorant Garamond', sans-serif;
+   --font-dms: 'DM Sans', sans-serif;
+   --font-msz: 'Ma Shan Zheng', sans-serif;
+   --font-mont: 'Montserrat', sans-serif;
 
    /* Color Tokens */
    --green-5: #7AAB8D;
