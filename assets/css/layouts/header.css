@@ -2,6 +2,10 @@
    Layout Header Styles
    ========================================================================== */
 
+main {
+    padding-top: 88px;
+}
+
 .site-header {
     position: fixed;
     z-index: 999;
