@@ -118,6 +118,7 @@
 
 .swiper-wrapper {
     align-items: center;
+    justify-content: center;
 }
 
 .swiper-slide {

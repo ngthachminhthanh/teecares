@@ -1,68 +1,85 @@
 export default function initHeader() {
-    const dropdowns = document.querySelectorAll(".js-dropdown");
-    const menuToggle = document.querySelector(".js-menu-toggle");
+    const tabletBreakpoint = 1024;
+
+    const siteHeader = document.querySelector(".site-header");
     const nav = document.querySelector(".js-nav");
+    const menuToggle = document.querySelector(".js-menu-toggle");
+    const overlay = document.querySelector(".js-header-overlay");
+    const dropdowns = document.querySelectorAll(
+        ".header__nav .menu-item-has-children"
+    );
 
-    dropdowns.forEach((dropdown) => {
-        dropdown.addEventListener("click", (e) => {
-            if (window.innerWidth > 1024) return;
+    if (!nav || !menuToggle || !siteHeader) return;
 
-            e.stopPropagation();
+    const isMobile = () => window.innerWidth <= tabletBreakpoint;
 
-            dropdowns.forEach((item) => {
-                if (item !== dropdown) {
-                    item.classList.remove("is-open");
-                }
-            });
-
-            dropdown.classList.toggle("is-open");
-        });
-
-        dropdown
-            .querySelector(".js-dropdown-menu")
-            ?.addEventListener("click", (e) => {
-                if (window.innerWidth > 1024) return;
-
-                e.stopPropagation();
-            });
-    });
-
-    document.addEventListener("click", () => {
-        if (window.innerWidth > 1024) return;
-
+    function closeSubmenus() {
         dropdowns.forEach((dropdown) => {
             dropdown.classList.remove("is-open");
         });
-    });
-
-    if (menuToggle && nav) {
-        menuToggle.addEventListener("click", (e) => {
-            if (window.innerWidth > 1024) return;
-
-            e.stopPropagation();
-
-            const isOpen = !nav.classList.contains("is-open");
-
-            menuToggle.classList.toggle("is-open", isOpen);
-            nav.classList.toggle("is-open", isOpen);
-            menuToggle.setAttribute("aria-expanded", String(isOpen));
-        });
     }
 
+    function setMenuState(isOpen) {
+        nav.classList.toggle("is-open", isOpen);
+        menuToggle.classList.toggle("is-open", isOpen);
+        siteHeader.classList.toggle("is-white", isOpen);
+
+        overlay?.classList.toggle("is-open", isOpen);
+
+        document.body.classList.toggle("is-lock-scroll", isOpen);
+
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+        if (!isOpen) {
+            closeSubmenus();
+        }
+    }
+
+    // Mobile submenu
+    dropdowns.forEach((dropdown) => {
+        const link = dropdown.querySelector(":scope > a");
+        const submenu = dropdown.querySelector(":scope > .sub-menu");
+
+        if (!link || !submenu) return;
+
+        link.addEventListener("click", (e) => {
+            if (!isMobile()) return;
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            const isOpen = dropdown.classList.contains("is-open");
+
+            closeSubmenus();
+
+            dropdown.classList.toggle("is-open", !isOpen);
+        });
+
+        submenu.addEventListener("click", (e) => {
+            if (!isMobile()) return;
+
+            e.stopPropagation();
+        });
+    });
+
+    // Hamburger
+    menuToggle.addEventListener("click", (e) => {
+        if (!isMobile()) return;
+
+        e.stopPropagation();
+
+        setMenuState(!nav.classList.contains("is-open"));
+    });
+
+    // Overlay
+    overlay?.addEventListener("click", () => {
+        setMenuState(false);
+    });
+
+    // Resize
     window.addEventListener("resize", () => {
-        if (window.innerWidth > 1024) {
-            dropdowns.forEach((dropdown) => {
-                dropdown.classList.remove("is-open");
-            });
-
-            if (nav) {
-                nav.classList.remove("is-open");
-            }
-
-            if (menuToggle) {
-                menuToggle.classList.remove("is-open");
-                menuToggle.setAttribute("aria-expanded", "false");
-            }
+        if (!isMobile()) {
+            setMenuState(false);
         }
     });
 }
