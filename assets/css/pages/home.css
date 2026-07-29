@@ -79,10 +79,12 @@
     overflow: hidden;
     width: 183px;
     justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .mv__button:hover {
-    opacity: 0.85;
+    background: #8EB89E;
+    opacity: 1;
 }
 
 .mv__button-text {

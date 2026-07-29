@@ -3,48 +3,101 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--font-cg);
     color: #fff;
-    text-decoration: none;
-    padding: 6px 24px;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 0;
     transition: all 0.3s ease;
 }
 
 .btn:hover {
-    box-shadow: 0 0 4px 0 #67BD96;
     opacity: 1;
 }
 
+/* Primary button */
+
 .btn-primary {
+    font-family: var(--font-cg);
+    padding: 6px 24px;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0;
     background:
         url("../../img/btn-bg.png") center/cover no-repeat;
 }
 
 .btn-primary:hover {
+    box-shadow: 0 0 4px 0 #67BD96;
     background: url("../../img/btn-bg-hover.png") center/cover no-repeat;
 }
 
+/* Secondary button */
+
 .btn-secondary {
+    gap: 12px;
+    padding: 12px 24px;
     background: var(--green-5);
+    overflow: hidden;
+    width: 183px;
 }
 
 .btn-secondary:hover {
-    opacity: 0.85;
+    background: #8EB89E;
 }
 
+.btn__text {
+    font-family: var(--font-mont);
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0;
+    text-align: center;
+    transition: transform .35s ease, opacity .35s ease;
+}
+
+.btn__icon {
+    aspect-ratio: 1;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform .35s ease, opacity .35s ease;
+}
+
+.btn__icon img {
+    object-fit: contain;
+}
+
+.btn:hover .btn__icon {
+    transform: translateX(40px);
+    opacity: 0;
+}
+
+.btn:hover .btn__text {
+    transform: translateX(18px);
+}
+
+/* Normal button (not primary/secondary) */
+.btn-normal {
+    background: var(--green-5);
+    font-family: var(--font-cg);
+    font-size: 24px;
+    letter-spacing: 0;
+}
+
+.btn-normal:hover {
+    background: var(--accent-500);
+}
+
+/* Modifier */
 .btn--booking {
     font-size: 32px;
 }
 
 .btn--footer {
     font-size: 28px;
+    font-weight: 600;
     padding: 2px 24px;
 }
 
-@media screen and (max-width: 785px) {
+@media screen and (max-width: 767px) {
     .btn {
         font-size: 20px;
     }
