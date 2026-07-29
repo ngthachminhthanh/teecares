@@ -2,47 +2,472 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TeeCares</title>
-    <link rel="stylesheet" href="./assets/css/main.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@100..1000&family=Ma+Shan+Zheng&family=Montserrat:wght@100..900&display=swap"
-        rel="stylesheet">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>TeeCares</title>
+	<link rel="stylesheet" href="./assets/css/main.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=DM+Sans:wght@100..1000&family=Ma+Shan+Zheng&family=Montserrat:wght@100..900&display=swap"
+		rel="stylesheet">
 </head>
 
 <body>
+	<!-- Header -->
+	<header id="masthead" class="site-header">
+		<div class="container container--1200">
+			<div class="main-navigation">
+				<div class="header">
+					<div class="header__container">
+						<h1 class="header__logo">
+							<a href="./index.html">
+								<img loading="lazy" class="img-full" src="./assets/img/logo.svg" alt="TEE Cares logo">
+							</a>
+						</h1>
 
-    <section class="program">
+						<nav class="header__nav js-nav">
+							<ul>
 
-        <div class="program__ellipse"></div>
+								<li class="menu-item menu-item-has-children">
 
-        <div class="program__item program__item--top">
-            <div class="program__cn">学业</div>
-            <p class="program__en">Academic Programmes</p>
-        </div>
+									<a href="./about.html">
+										About Us
+									</a>
 
-        <div class="program__item program__item--left">
-            <div class="program__cn">答疑</div>
-            <p class="program__en">Consultations</p>
-        </div>
+									<ul class="sub-menu">
 
-        <div class="program__item program__item--right">
-            <div class="program__cn">自习</div>
-            <p class="program__en">Self-study sessions</p>
-        </div>
+										<li class="menu-item">
+											<a href="#">
+												Primary 1-2
+											</a>
+										</li>
 
-        <div class="program__item program__item--bottom">
-            <div class="program__cn">语文</div>
-            <p class="program__en">Language immersion</p>
-        </div>
+										<li class="menu-item">
+											<a href="#">
+												Primary 3-4
+											</a>
+										</li>
 
-    </section>
+										<li class="menu-item">
+											<a href="#">
+												Primary 5-6
+											</a>
+										</li>
 
+									</ul>
+
+								</li>
+
+								<li class="menu-item menu-item-has-children">
+
+									<a href="#">
+										The TEE Cares Difference
+									</a>
+
+									<ul class="sub-menu">
+
+										<li class="menu-item">
+											<a href="#">
+												Primary 1-2
+											</a>
+										</li>
+
+										<li class="menu-item">
+											<a href="#">
+												Primary 3-4
+											</a>
+										</li>
+
+										<li class="menu-item">
+											<a href="#">
+												Primary 5-6
+											</a>
+										</li>
+
+									</ul>
+
+								</li>
+
+								<li class="menu-item menu-item-has-children">
+
+									<a href="#">
+										Programme Details
+									</a>
+
+									<ul class="sub-menu">
+
+										<li class="menu-item">
+											<a href="#">
+												Primary 1-2
+											</a>
+										</li>
+
+										<li class="menu-item">
+											<a href="#">
+												Primary 3-4
+											</a>
+										</li>
+
+										<li class="menu-item">
+											<a href="#">
+												Primary 5-6
+											</a>
+										</li>
+
+									</ul>
+
+								</li>
+
+								<li class="menu-item menu-item-has-children">
+
+									<a href="#">
+										Timetable
+									</a>
+
+									<ul class="sub-menu">
+
+										<li class="menu-item">
+											<a href="#">
+												Primary 1-2
+											</a>
+										</li>
+
+										<li class="menu-item">
+											<a href="#">
+												Primary 3-4
+											</a>
+										</li>
+
+										<li class="menu-item">
+											<a href="#">
+												Primary 5-6
+											</a>
+										</li>
+
+									</ul>
+
+								</li>
+
+							</ul>
+
+							<div class="header__cta sp-only">
+								<a href="#" class="btn btn-primary">
+									Book a School Tour
+								</a>
+							</div>
+						</nav>
+
+						<!-- CTA -->
+						<div class="header__actions">
+							<a href="#" class="btn btn-primary">
+								Book a School Tour
+							</a>
+						</div>
+
+						<div class="header__toggle sp-only js-menu-toggle">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="header-overlay js-header-overlay"></div>
+	</header>
+
+	<main>
+		<section class="dsc py-100">
+			<div class="container dsc__content">
+				<div class="dsc__left">
+					<h2 class="dsc__title paragraph-title" data-aos="fade-in">7-Day Student Care</h2>
+					<p class="dsc__sign font-msz" data-aos="fade-in" data-aos-delay="200">无忧</p>
+				</div>
+
+				<div class="dsc__right">
+					<p class="dsc__text paragraph-text" data-aos="fade-up" data-aos-delay="400">TEE Cares offers a truly unique 7-day student care programme,
+						thoughtfully
+						designed to meet the realities of modern family life while providing children with a consistent,
+						enriching environment throughout the entire week. In many households, weekends can become
+						periods of excessive screen time, irregular routines, or limited opportunities for meaningful
+						engagement.</p>
+					<p class="paragraph-text" data-aos="fade-up" data-aos-delay="600">
+						Our programme addresses this gap by ensuring that children continue to benefit from structure,
+						stimulation, and purposeful learning beyond the traditional school week.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="program">
+			<div class="container">
+				<p class="program__text font-cg" data-aos="fade-up">Students enjoy continuity in both their academic and personal development
+					through a
+					carefully balanced blend of:</p>
+				<div class="program__diagram" data-aos="fade-up" data-aos-delay="200">
+					<div class="program__ellipse"></div>
+
+					<div class="program__item program__item--top">
+						<div class="program__cn font-msz">学业</div>
+						<p class="program__en font-cg">Academic Programmes</p>
+					</div>
+
+					<div class="program__item program__item--left">
+						<div class="program__cn font-msz">答疑</div>
+						<p class="program__en font-cg">Consultations</p>
+					</div>
+
+					<div class="program__item program__item--right">
+						<div class="program__cn font-msz">自习</div>
+						<p class="program__en font-cg">Self-study sessions</p>
+					</div>
+
+					<div class="program__item program__item--bottom">
+						<div class="program__cn font-msz">语文</div>
+						<p class="program__en font-cg">Language immersion</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="info py-100">
+			<div class="container">
+				<p class="paragraph-text" data-aos="fade-up">This consistency of daily routines helps children build positive
+					habits, develop self-discipline, and feel secure
+					in a familiar environment guided by trusted educators.</p>
+				<p class="info__text paragraph-text" data-aos="fade-up" data-aos-delay="200">For working parents, our 7-day model also offers invaluable
+					flexibility and peace of mind, knowing that their
+					children are spending their time in a safe, nurturing environment where every activity is
+					intentionally designed
+					to contribute to their growth. Rather than simply providing supervision, TEE Cares ensures that
+					every day is
+					purposeful, every experience is enriching, and every child remains inspired to learn, discover, and
+					thrive.</p>
+				<div class="info__img" data-aos="fade-up" data-aos-delay="400">
+					<img loading="lazy" class="img-full" src="./assets/img/dsc-video.png" alt="7-Day Student Care" />
+				</div>
+			</div>
+		</section>
+
+		<section class="booking">
+			<div class="container">
+				<div class="booking__info">
+					<h2 class="booking__slogan font-cg" data-aos="fade-up" data-aos-delay="200">
+						Experience our full Chinese immersion programme.
+					</h2>
+					<p class="booking__call font-cg" data-aos="fade-up" data-aos-delay="400">
+						Book a tour with us today.
+					</p>
+
+					<div class="booking__btn" data-aos="fade-up" data-aos-delay="600">
+						<a href="#" class="btn btn-primary btn--booking">
+							Book a Tour
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- Footer -->
+	<footer id="colophon" class="site-footer">
+
+		<div class="footer">
+			<div class="footer__pattern"></div>
+			<div class="container">
+				<h2 class="footer__ready font-cg" data-aos="fade-up">Ready to experience<br>TEE Cares?</h2>
+
+				<div class="footer__content">
+					<div class="footer__brand">
+						<a href="./index.html" class="footer__logo">
+							<img loading="lazy" class="img-full" src="./assets/img/logo-footer.svg" alt="Teecares Logo">
+						</a>
+						<h2 class="footer__cn-slogan font-msz" data-aos="fade-up">在语言中成长，在品格中绽放</h2>
+						<h2 class="footer__en-slogan font-mont" data-aos="fade-up">Growing Through Language. Flourishing
+							Through Character.
+						</h2>
+					</div>
+					<div class="footer__info">
+						<div class="footer__group footer__group--about" data-aos="fade-up">
+							<h3 class="footer__title font-cg">About Us</h3>
+
+							<ul class="footer__list">
+								<li class="footer__item">
+									<a class="footer__link font-mont" href="#">
+										Why Chinese Immersion
+									</a>
+								</li>
+
+								<li class="footer__item">
+									<a class="footer__link font-mont" href="#">
+										7-Day Student Care
+									</a>
+								</li>
+
+								<li class="footer__item">
+									<a class="footer__link font-mont" href="#">
+										Expert Educators
+									</a>
+								</li>
+
+								<li class="footer__item">
+									<a class="footer__link font-mont" href="#">
+										Unlimited Chinese
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="footer__group footer__group--difference" data-aos="fade-up">
+							<h3 class="footer__title font-cg">The TEE Cares Difference</h3>
+
+							<ul class="footer__list">
+								<li class="footer__item">
+									<a class="footer__link font-mont" href="#">
+										Refined Learning Environment
+									</a>
+								</li>
+
+								<li class="footer__item">
+									<a class="footer__link font-mont" href="#">
+										Restaurant-Catered Meals
+									</a>
+								</li>
+
+								<li class="footer__item">
+									<a class="footer__link font-mont" href="#">
+										Open Snack Bar
+									</a>
+								</li>
+
+								<li class="footer__item">
+									<a class="footer__link font-mont" href="#">
+										Parent-Child Enrichment Programmes
+									</a>
+								</li>
+
+								<li class="footer__item">
+									<a class="footer__link font-mont" href="#">
+										Extra Services
+									</a>
+								</li>
+
+								<li class="footer__item">
+									<a class="footer__link font-mont" href="#">
+										Mobile App
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="footer__group footer__group--programme" data-aos="fade-up">
+							<h3 class="footer__title font-cg">Programme Details</h3>
+
+							<ul class="footer__list">
+								<li class="footer__item">
+									<a class="footer__link font-mont" href="#">
+										Overview
+									</a>
+								</li>
+
+								<li class="footer__item">
+									<a class="footer__link font-mont" href="#">
+										Academic Excellence
+									</a>
+								</li>
+
+								<li class="footer__item">
+									<a class="footer__link font-mont" href="#">
+										Chinese Culture Immersion
+									</a>
+								</li>
+
+								<li class="footer__item">
+									<a class="footer__link font-mont" href="#">
+										Character Building
+									</a>
+								</li>
+
+								<li class="footer__item">
+									<a class="footer__link font-mont" href="#">
+										Sports &amp; Wellness
+									</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="footer__group footer__group--tour" data-aos="fade-up">
+							<h3 class="footer__title font-cg">Book a Tour</h3>
+
+							<p class="footer__text font-mont">
+								Book a tour and see how we make after-school hours
+								the best part of your child's day.
+							</p>
+
+							<div class="footer__button">
+								<a href="#" class="btn btn-secondary btn--footer">
+									Book a Tour
+								</a>
+							</div>
+						</div>
+
+						<div class="footer__group footer__group--timetable" data-aos="fade-up">
+							<h3 class="footer__title font-cg">Timetable</h3>
+
+							<ul class="footer__list">
+								<li class="footer__item">
+									<a class="footer__link font-mont" href="#">
+										Primary 1-2
+									</a>
+								</li>
+
+								<li class="footer__item">
+									<a class="footer__link font-mont" href="#">
+										Primary 3-4
+									</a>
+								</li>
+
+								<li class="footer__item">
+									<a class="footer__link font-mont" href="#">
+										Primary 5-6
+									</a>
+								</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="footer__contact">
+					<p class="footer__copyright font-mont">© 2026 TEE Cares Student Care. All rights reserved.</p>
+					<div class="footer__socials">
+						<a href="#" class="footer__social flex-center">
+							<div class="footer__social-icon">
+								<img loading="lazy" class="img-full" src="./assets/img/icons/fb.svg" alt="Facebook Icon">
+							</div>
+						</a>
+						<a href="#" class="footer__social flex-center">
+							<div class="footer__social-icon">
+								<img loading="lazy" class="img-full" src="./assets/img/icons/ins.svg" alt="Instagram Icon">
+							</div>
+						</a>
+						<a href="#" class="footer__social flex-center">
+							<div class="footer__social-icon">
+								<img loading="lazy" class="img-full" src="./assets/img/icons/youtube.svg" alt="Youtube Icon">
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+
+	<script type="module" src="./assets/js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </body>
 
 </html>
