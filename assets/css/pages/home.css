@@ -8,6 +8,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(180deg, #F8F7F1 0%, #F5F5E8 100%),
+        radial-gradient(97.65% 155.64% at 17% 18%, rgba(220, 203, 168, 0.22) 0%, rgba(0, 0, 0, 0) 30%);
 }
 
 .mv__img {
@@ -135,11 +137,6 @@
 
 .swiper-slide:not(:last-child) {
     border-right: 1px solid #ADC0AE;
-}
-
-.swiper-slide::after {
-    right: 0;
-    transform: translate(50%, -50%);
 }
 
 .areas__sign {

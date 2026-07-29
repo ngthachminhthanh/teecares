@@ -82,8 +82,8 @@ main {
     left: -28px;
     width: 160px;
     padding: 28px;
-    border-radius: 24px;
-    background: #FCF7EF;
+    border-radius: var(--radius-lg);
+    background: #FAF1E4;
     box-shadow: 0px 14px 42px 0px #39403859;
     opacity: 0;
     visibility: hidden;

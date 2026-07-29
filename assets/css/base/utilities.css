@@ -6,6 +6,10 @@
     padding: 100px 0;
 }
 
+.no-padding {
+    padding: 0;
+}
+
 .flex-center {
     display: flex;
     align-items: center;
