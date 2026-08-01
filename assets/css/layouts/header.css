@@ -27,7 +27,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 48px;
+    gap: 20px;
 }
 
 .header__logo {
@@ -39,7 +39,7 @@ main {
 .header__nav {
     flex: 1;
     display: flex;
-    margin-left: 27px;
+    justify-content: center;
     transition: max-height .35s ease, opacity .35s ease, transform .35s ease, visibility .35s ease;
 }
 
@@ -72,7 +72,7 @@ main {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    max-height: 220px;
+    max-height: max-content;
     pointer-events: auto;
 }
 
@@ -175,12 +175,14 @@ main {
 .header__nav>ul>.menu-item>a {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
     gap: 10px;
     transition: opacity .3s;
+    color: var(--primary-text);
 }
 
-.header__nav>ul>.menu-item>a:hover {
-    opacity: .7;
+.header__nav > ul > .is-active > a {
+    color: var(--accent-600);
 }
 
 .header-overlay {
@@ -213,6 +215,13 @@ body.is-lock-scroll {
    ========================================================================== */
 
 /* Desktop */
+
+/* @media screen and (min-width: 1025px) and (max-width: 1100px) {
+    .header .header__nav>ul {
+        gap: 32px;
+    }
+} */
+
 
 @media screen and (min-width: 1025px) {
     .header__nav>ul>.menu-item::after {
@@ -263,7 +272,7 @@ body.is-lock-scroll {
         top: 100%;
         left: 0;
         right: 0;
-        padding: 24px 40px;
+        padding: 24px 15px;
         background: #fff;
         overflow: hidden;
         max-height: 0;
@@ -371,7 +380,7 @@ body.is-lock-scroll {
         top: 100%;
         left: 0;
         right: 0;
-        padding: 24px 20px;
+        padding: 24px 15px;
         background: #fff;
         overflow: hidden;
         max-height: 0;

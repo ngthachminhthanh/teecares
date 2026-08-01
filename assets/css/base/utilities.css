@@ -58,51 +58,41 @@
 .font-cg {
     font-family: var(--font-cg);
     font-weight: 400;
-    line-height: 100%;
+    line-height: 1;
     letter-spacing: 0;
 }
 
 .font-dms {
     font-family: var(--font-dms);
     font-weight: 500;
-    line-height: 100%;
+    line-height: 1;
     letter-spacing: 0;
 }
 
 .font-msz {
     font-family: var(--font-msz);
     font-weight: 400;
-    line-height: 100%;
+    line-height: 1;
     letter-spacing: 0;
 }
 
 .font-mont {
     font-family: var(--font-mont);
     font-weight: 400;
-    line-height: 100%;
+    line-height: 1;
     letter-spacing: 0;
 }
 
 /* Layout Container */
 
-.container,
-.container--1200,
-.container--613 {
+.container {
     width: 100%;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 15px;
 }
 
 .container {
-    max-width: calc(var(--container-max-width) + 40px * 2);
-}
-
-.container--1200 {
-    max-width: calc(1200px + 40px * 2);
-}
-
-.container--613 {
-    max-width: calc(613px + 40px * 2);
+    max-width: calc(var(--container-max-width) + 15px * 2);
 }
 
 /* Flex & Grid Helpers */
@@ -137,6 +127,18 @@
    Responsive
    ========================================================================== */
 
+/* Desktop */
+
+@media screen and (min-width: 768px) {
+    .sp-only {
+        display: none;
+    }
+
+    .pc-only {
+        display: block;
+    }
+}
+
 /* Tablet */
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -149,12 +151,12 @@
     }
 }
 
+/* Mobile */
+
 @media screen and (max-width: 767px) {
 
-    .container,
-    .container--1200,
-    .container--613 {
-        padding: 0 20px;
+    .container {
+        padding: 0 15px;
     }
 
     .grid-3,
@@ -163,38 +165,23 @@
     }
 
     .py-100 {
-        padding: 15px 0;
+        padding: 50px 0;
     }
 
     .paragraph-title {
-        font-size: 36px;
+        font-size: 33px;
+        line-height: normal;
     }
 
     .paragraph-text {
         font-size: 16px;
     }
-}
 
-/* Mobile */
-
-@media screen and (max-width: 767px) {
     .sp-only {
         display: block;
     }
 
     .pc-only {
         display: none;
-    }
-}
-
-/* Desktop */
-
-@media screen and (min-width: 768px) {
-    .sp-only {
-        display: none;
-    }
-
-    .pc-only {
-        display: block;
     }
 }

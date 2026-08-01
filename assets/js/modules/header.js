@@ -82,4 +82,29 @@ export default function initHeader() {
             setMenuState(false);
         }
     });
+
+    // Active menu color
+    const currentPath = window.location.pathname.replace(/\/$/, '');
+
+    document.querySelectorAll('.header__nav > ul > .menu-item > a').forEach(link => {
+        const href = link.getAttribute('href');
+
+        if (
+            !href ||
+            href === '#' ||
+            href.startsWith('javascript:') ||
+            href.startsWith('mailto:') ||
+            href.startsWith('tel:')
+        ) {
+            return;
+        }
+
+        const linkPath = new URL(link.href, window.location.origin)
+            .pathname
+            .replace(/\/$/, '');
+
+        if (linkPath === currentPath) {
+            link.parentElement.classList.add('is-active');
+        }
+    });
 }

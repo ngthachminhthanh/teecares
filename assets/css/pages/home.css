@@ -25,7 +25,6 @@
     flex-direction: column;
     justify-content: center;
     top: -10px;
-    left: -15px;
 }
 
 .mv__first {
@@ -145,6 +144,7 @@
     font-family: var(--font-msz);
     font-weight: 400;
     font-size: 40px;
+    line-height: normal;
     letter-spacing: 0;
     color: var(--primary-400);
 }
@@ -213,9 +213,9 @@
 
 .value__core {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 53px;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 53px;
 }
 
 .value__title {
@@ -273,8 +273,6 @@
 }
 
 .booking {
-    padding-top: 108px;
-    padding-bottom: 98px;
     background-color: var(--yellow-2);
 }
 
@@ -285,8 +283,8 @@
 .booking__slogan {
     font-size: 36px;
     font-weight: 500;
+    line-height: 150%;
     color: var(--primary-text);
-    margin-bottom: 13px;
 }
 
 .booking__call {
@@ -294,7 +292,7 @@
     font-style: italic;
     font-size: 32px;
     color: var(--sub-text);
-    margin-bottom: 28px;
+    margin-bottom: 27px;
 }
 
 /* ==========================================================================
@@ -324,6 +322,20 @@
 /* Tablet */
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .mv {
+        height: 80vh;
+    }
+
+    .mv__img img {
+        object-position: 77% center;
+    }
+
+
+    .mv__first {
+        margin-bottom: unset;
+    }
+
+
     .mv__title {
         width: 55%;
         font-size: 50px;
@@ -335,8 +347,7 @@
     }
 
     .mv__introduce {
-        top: unset;
-        left: unset;
+        top: 0;
     }
 
     .immersion__core {
@@ -367,6 +378,7 @@
     }
 
     .value__core {
+        grid-template-columns: repeat(2, 1fr);
         gap: 30px;
     }
 
@@ -404,19 +416,34 @@
 /* Mobile */
 
 @media screen and (max-width: 767px) {
+    .mv {
+        height: 80vh;
+    }
+
+    .mv__img img {
+        object-position: 77% center;
+    }
+
+
+    .mv__first {
+        margin-bottom: unset;
+    }
+
     .mv__title {
         width: 85%;
         font-size: 40px;
+        margin-bottom: unset;
     }
 
     .mv__subtitle {
         width: 70%;
         font-size: 36px;
+        margin-bottom: unset;
     }
 
     .mv__introduce {
-        top: unset;
-        left: unset;
+        top: 150px;
+        gap: 10px;
     }
 
     .immersion__core {
@@ -434,7 +461,11 @@
     }
 
     .immersion__title {
-        margin-bottom: 30px;
+        margin-bottom: 15px;
+    }
+
+    .immersion__p1 {
+        margin-bottom: 15px;
     }
 
     .value__info {

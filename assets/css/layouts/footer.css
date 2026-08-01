@@ -23,8 +23,7 @@
     display: grid;
     grid-template-columns: 34% 1fr;
     column-gap: 120px;
-    row-gap: 21px;
-    margin-top: 2px;
+    row-gap: 16px;
 
     grid-template-areas:
         "about difference"
@@ -62,8 +61,7 @@
     font-size: 72px;
     font-weight: 600;
     color: var(--yellow-1);
-    line-height: 120%;
-    padding-bottom: 24px;
+    padding-bottom: 21px;
     margin-bottom: 28px;
     border-bottom: 1px solid #F5F5E824;
 }
@@ -130,7 +128,7 @@
 .footer__contact {
     display: flex;
     justify-content: space-between;
-    margin-top: 80px;
+    margin-top: 74px;
     align-items: center;
 }
 
@@ -169,7 +167,7 @@
 
 /* Desktop */
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
     .footer__info {
         max-width: 619px;
     }
@@ -181,7 +179,7 @@
 
 /* Tablet */
 
-@media screen and (min-width: 786px) and (max-width: 1439px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
     .footer__ready {
         font-size: 50px;
     }
@@ -194,17 +192,29 @@
         margin-top: 30px;
     }
 
+    .footer__info {
+        margin-top: 20px;
+    }
+
     .footer__contact {
         flex-direction: column-reverse;
         align-items: flex-start;
         gap: 20px;
         margin-top: 30px;
     }
+
+    .footer__cn-slogan {
+        margin: 20px 0;
+    }
 }
 
 /* Mobile */
 
-@media screen and (max-width: 785px) {
+@media screen and (max-width: 767px) {
+    .footer {
+        padding: 50px 0;
+    }
+
     .footer__logo {
         width: 100px;
     }
@@ -232,6 +242,7 @@
 
     .footer__cn-slogan {
         margin: 15px 0;
+        font-size: 30px;
     }
 
     .footer__contact {
