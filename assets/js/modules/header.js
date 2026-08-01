@@ -36,31 +36,31 @@ export default function initHeader() {
     }
 
     // Mobile submenu
-    dropdowns.forEach((dropdown) => {
-        const link = dropdown.querySelector(":scope > a");
-        const submenu = dropdown.querySelector(":scope > .sub-menu");
+    // dropdowns.forEach((dropdown) => {
+    //     const toggle = dropdown.querySelector(".submenu-toggle");
+    //     const submenu = dropdown.querySelector(":scope > .sub-menu");
 
-        if (!link || !submenu) return;
+    //     if (!toggle || !submenu) return;
 
-        link.addEventListener("click", (e) => {
-            if (!isMobile()) return;
+    //     toggle.addEventListener("click", (e) => {
+    //         if (!isMobile()) return;
 
-            e.preventDefault();
-            e.stopPropagation();
+    //         e.preventDefault();
+    //         e.stopPropagation();
 
-            const isOpen = dropdown.classList.contains("is-open");
+    //         const isOpen = dropdown.classList.contains("is-open");
 
-            closeSubmenus();
+    //         closeSubmenus();
 
-            dropdown.classList.toggle("is-open", !isOpen);
-        });
+    //         dropdown.classList.toggle("is-open", !isOpen);
+    //     });
 
-        submenu.addEventListener("click", (e) => {
-            if (!isMobile()) return;
+    //     submenu.addEventListener("click", (e) => {
+    //         if (!isMobile()) return;
 
-            e.stopPropagation();
-        });
-    });
+    //         e.stopPropagation();
+    //     });
+    // });
 
     // Hamburger
     menuToggle.addEventListener("click", (e) => {
@@ -74,13 +74,6 @@ export default function initHeader() {
     // Overlay
     overlay?.addEventListener("click", () => {
         setMenuState(false);
-    });
-
-    // Resize
-    window.addEventListener("resize", () => {
-        if (!isMobile()) {
-            setMenuState(false);
-        }
     });
 
     // Active menu color
@@ -105,6 +98,62 @@ export default function initHeader() {
 
         if (linkPath === currentPath) {
             link.parentElement.classList.add('is-active');
+        }
+    });
+
+    // Submenu behavior on tablet/mobile
+    function updateSubmenuToggle() {
+        dropdowns.forEach(dropdown => {
+            const submenu = dropdown.querySelector(":scope > .sub-menu");
+
+            if (!submenu) return;
+
+            let button = dropdown.querySelector(".submenu-toggle");
+
+            if (isMobile()) {
+
+                if (!button) {
+
+                    button = document.createElement("button");
+                    button.type = "button";
+                    button.className = "submenu-toggle";
+                    button.setAttribute("aria-label", "Toggle submenu");
+
+                    dropdown.insertBefore(button, submenu);
+
+                    button.addEventListener("click", (e) => {
+
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        const isOpen = dropdown.classList.contains("is-open");
+
+                        closeSubmenus();
+
+                        dropdown.classList.toggle("is-open", !isOpen);
+
+                    });
+
+                }
+
+            } else {
+
+                button?.remove();
+
+                dropdown.classList.remove("is-open");
+
+            }
+
+        });
+    }
+    updateSubmenuToggle();
+
+    // Resize behavior
+    window.addEventListener("resize", () => {
+        updateSubmenuToggle();
+
+        if (!isMobile()) {
+            setMenuState(false);
         }
     });
 }
