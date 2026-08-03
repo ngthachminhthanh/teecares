@@ -35,33 +35,6 @@ export default function initHeader() {
         }
     }
 
-    // Mobile submenu
-    // dropdowns.forEach((dropdown) => {
-    //     const toggle = dropdown.querySelector(".submenu-toggle");
-    //     const submenu = dropdown.querySelector(":scope > .sub-menu");
-
-    //     if (!toggle || !submenu) return;
-
-    //     toggle.addEventListener("click", (e) => {
-    //         if (!isMobile()) return;
-
-    //         e.preventDefault();
-    //         e.stopPropagation();
-
-    //         const isOpen = dropdown.classList.contains("is-open");
-
-    //         closeSubmenus();
-
-    //         dropdown.classList.toggle("is-open", !isOpen);
-    //     });
-
-    //     submenu.addEventListener("click", (e) => {
-    //         if (!isMobile()) return;
-
-    //         e.stopPropagation();
-    //     });
-    // });
-
     // Hamburger
     menuToggle.addEventListener("click", (e) => {
         if (!isMobile()) return;
