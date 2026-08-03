@@ -123,17 +123,18 @@
     padding: 32px 0;
 }
 
+.areas__container {
+    padding: 0 40px;
+}
+
 .swiper-wrapper {
     align-items: center;
-    justify-content: center;
 }
 
 .swiper-slide {
     display: flex;
     align-items: center;
     gap: 20px;
-    width: fit-content !important;
-    padding-right: 28px;
 }
 
 .swiper-slide:not(:last-child) {

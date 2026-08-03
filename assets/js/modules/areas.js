@@ -1,5 +1,5 @@
 export default function initAreas() {
-    new Swiper(".swiper", {
+    const swiper = new Swiper(".swiper", {
         slidesPerView: 5,
         spaceBetween: 28,
         loop: true,
