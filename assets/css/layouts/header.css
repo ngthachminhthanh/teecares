@@ -36,6 +36,10 @@ main {
     width: 79px;
 }
 
+.header__logo a:hover {
+    opacity: 1;
+}
+
 .header__nav {
     flex: 1;
     display: flex;
@@ -151,7 +155,7 @@ main {
     font-family: var(--font-cg);
     font-size: 18px;
     font-weight: 700;
-    line-height: 25px;
+    line-height: 1.389;
     letter-spacing: 0;
     user-select: none;
 }

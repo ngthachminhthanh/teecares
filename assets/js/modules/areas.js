@@ -1,32 +1,38 @@
 export default function initAreas() {
-    const swiper = new Swiper(".swiper", {
-        slidesPerView: 5,
-        spaceBetween: 28,
-        loop: true,
+    document.querySelectorAll(".home-col-5.swiper").forEach((swiperEl) => {
+        new Swiper(swiperEl, {
+            slidesPerView: 1,
+            spaceBetween: 28,
+            loop: true,
 
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
 
-        speed: 800,
+            pagination: {
+                el: swiperEl.parentElement.querySelector(".swiper-pagination"),
+                clickable: true,
+            },
 
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
+            navigation: {
+                nextEl: swiperEl.parentElement.querySelector(".btn-next"),
+                prevEl: swiperEl.parentElement.querySelector(".btn-prev"),
             },
-            576: {
-                slidesPerView: 2,
+
+            speed: 800,
+
+            breakpoints: {
+                768: {
+                    slidesPerView: 3,
+                },
+                1200: {
+                    slidesPerView: 5,
+                    loop: false,
+                    autoplay: false,
+                    allowTouchMove: false,
+                },
             },
-            768: {
-                slidesPerView: 3,
-            },
-            1024: {
-                slidesPerView: 5,
-                loop: false,
-                autoplay: false,
-                allowTouchMove: false,
-            },
-        },
+        });
     });
 }

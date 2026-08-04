@@ -23,7 +23,7 @@
     display: grid;
     grid-template-columns: 34% 1fr;
     column-gap: 120px;
-    row-gap: 16px;
+    row-gap: 22px;
 
     grid-template-areas:
         "about difference"
@@ -75,6 +75,10 @@
     width: 100%;
 }
 
+.footer__brand a:hover {
+    opacity: 1;
+}
+
 .footer__logo {
     display: block;
     aspect-ratio: 174/154;
@@ -92,7 +96,7 @@
     font-size: 14px;
     color: var(--primary-400);
     font-style: italic;
-    line-height: 25px;
+    line-height: 1.786;
     font-weight: 600;
 }
 
@@ -107,7 +111,7 @@
     font-size: 12px;
     color: #F5F5E8B8;
     transition: color 0.3s ease;
-    line-height: 14px;
+    line-height: 1.167;
 }
 
 .footer__item {
@@ -136,7 +140,7 @@
     font-weight: 600;
     font-style: italic;
     font-size: 14px;
-    line-height: 25px;
+    line-height: 1.786;
     color: var(--primary-400);
 }
 
@@ -179,7 +183,7 @@
 
 /* Tablet */
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
     .footer__ready {
         font-size: 50px;
     }
@@ -205,6 +209,10 @@
 
     .footer__cn-slogan {
         margin: 20px 0;
+    }
+
+    .footer__logo {
+        width:  150px;
     }
 }
 
